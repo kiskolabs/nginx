@@ -1,9 +1,3 @@
-nginx (0.7.65-1ubuntu3) lucid; urgency=low
-
-  * Add the SecureDownload module.
-
- -- Matias Korhonen <matias@kiskolabs.com>  Wed, 07 Jul 2010 16:53:31 +0300 
-
 nginx (0.7.65-1ubuntu2) lucid; urgency=low
 
   * Re-enable http_realip_module (debian/rules).
