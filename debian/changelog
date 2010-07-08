@@ -1,8 +1,8 @@
-nginx (0.7.65-1ubuntu3) lucid; urgency=low
+nginx (0.7.65-1ubuntu2ppa1) lucid; urgency=low
 
   * Add the SecureDownload module.
 
- -- Matias Korhonen <matias@kiskolabs.com>  Thu, 08 Jul 2010 02:55:18 +0300
+ -- Matias Korhonen <matias@kiskolabs.com>  Thu, 08 Jul 2010 03:03:15 +0300
 
 nginx (0.7.65-1ubuntu2) lucid; urgency=low
 
