@@ -5,13 +5,16 @@
 # statements for each of your virtual hosts
 
 server {
-	listen   80 default;
+
+	listen   80; ## listen for ipv4
+	listen   [::]:80 default ipv6only=on; ## listen for ipv6
+
 	server_name  localhost;
 
 	access_log  /var/log/nginx/localhost.access.log;
 
 	location / {
-		root   /var/www/nginx-default;
+		root   /var/www;
 		index  index.html index.htm;
 	}
 
@@ -86,8 +89,8 @@ server {
 
 #ssl_session_timeout  5m;
 
-#ssl_protocols  SSLv2 SSLv3 TLSv1;
-#ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
+#ssl_protocols  SSLv3 TLSv1;
+#ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv3:+EXP;
 #ssl_prefer_server_ciphers   on;
 
 #location / {

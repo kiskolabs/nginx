@@ -27,10 +27,11 @@ set -e
 . /lib/lsb/init-functions
 
 test_nginx_config() {
-  if nginx -t $DAEMON_OPTS
+  if $DAEMON -t $DAEMON_OPTS >/dev/null 2>&1
   then
     return 0
   else
+    $DAEMON -t $DAEMON_OPTS
     return $?
   fi
 }

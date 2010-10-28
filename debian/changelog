@@ -1,8 +1,133 @@
-nginx (0.7.65-1ubuntu2ppa1) lucid; urgency=low
+nginx (0.7.67-3ubuntu2ppa1) maverick; urgency=low
 
-  * Add the SecureDownload module.
+  * Adds the SecureDownloads module to the standard package.
 
- -- Matias Korhonen <matias@kiskolabs.com>  Thu, 08 Jul 2010 03:03:15 +0300
+ -- Matias Korhonen <matias@kiskolabs.com>  Thu, 28 Oct 2010 16:48:56 +0300
+
+nginx (0.7.67-3ubuntu1) maverick; urgency=low
+
+  * Merge from debian testing. (LP: #616685) Remaining changes:
+    - Add a UFW profile set:
+      + debian/nginx.ufw.profile: Added.
+      + debian/control: nginx: Suggests ufw.
+      + debian/dirs: Add 'etc/ufw/applications.d'
+      + debian/rules: Add install rule for the nginx UFW profile.
+    - Install html files.
+      - debian/dirs: Add 'var/www/nginx-default'.
+      - debian/nginx.install: Add 'html/* var/www/nginx-default'.
+
+ -- Mikhail Turov <groldster@gmail.com>  Mon, 16 Aug 2010 22:52:17 +0200
+
+nginx (0.7.67-3) unstable; urgency=low
+
+  * debian/rules:
+    + Readded the configure option --with-mail_ssl_module, Thanks to Roland
+      Rosenfeld <roland@spinnaker.de> (Closes: #590815)
+  * debian/control:
+    + Updated Standards-Version to 3.9.1 (no changes needed)
+
+ -- Kartik Mistry <kartik@debian.org>  Thu, 29 Jul 2010 21:41:52 +0530
+
+nginx (0.7.67-2ubuntu1) maverick; urgency=low
+
+  * Merge from debian testing. (LP: #608172) Remaining changes:
+    - Add a UFW profile set:
+      + debian/nginx.ufw.profile: Added.
+      + debian/control: nginx: Suggests ufw.
+      + debian/dirs: Add 'etc/ufw/applications.d'
+      + debian/rules: Add install rule for the nginx UFW profile.
+    - Install html files.
+      - debian/dirs: Add 'var/www/nginx-default'.
+      - debian/nginx.install: Add 'html/* var/www/nginx-default'.
+
+ -- Mikhail Turov <groldster@gmail.com>  Wed, 21 Jul 2010 11:57:53 +0100
+
+nginx (0.7.67-2) unstable; urgency=low
+
+  * debian/conf/sites-available/default:
+    + Removed reference to SSLv2 protocol (Closes: #589139)
+  * debian/control:
+    + Updated Standards-Version to 3.9.0
+  * debian/copyright:
+    + Don't point to BSD license file, included exact upstream version of
+      license text
+    + Added missing copyright owner for contrib/ scripts
+    + debian/* license is same as upstream now as discussed with co-maintainers
+
+ -- Kartik Mistry <kartik@debian.org>  Mon, 19 Jul 2010 10:36:32 +0530
+
+nginx (0.7.67-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Kartik Mistry <kartik@debian.org>  Wed, 16 Jun 2010 01:26:51 +0530
+
+nginx (0.7.65-7) unstable; urgency=low
+
+  [Kartik Mistry]
+  * debian/rules:
+    + Enabled HTTPSubModule module in configure (Closes: #584828)
+    + Arranged configure options in better manner
+
+ -- Kartik Mistry <kartik@debian.org>  Mon, 07 Jun 2010 14:33:24 +0530
+
+nginx (0.7.65-6) unstable; urgency=low
+
+  [Kartik Mistry]
+  * debian/README.Debian:
+    + Fixed typo and somewhat better wordings
+  * debian/conf/mime.types:
+    + Added entry to support 7zip files (Closes: #580423)
+  * debian/init.d:
+    + Do not print config testing info until an error found, Thanks to Ubuntu
+      bug 568293
+  * debian/copyright:
+    + Updated as per DEP-5 specification
+
+ -- Kartik Mistry <kartik@debian.org>  Sat, 22 May 2010 01:41:33 +0530
+
+nginx (0.7.65-5) unstable; urgency=low
+
+  [Kartik Mistry]
+  * debian/patches/fix_reloading_ipv6.diff:
+    + Added patch to fix reloading with IPv6 addresses, Thanks to
+      Matthias-Christian Ott <ott@mirix.org> for patch (Closes: #577456)
+
+ -- Kartik Mistry <kartik@debian.org>  Wed, 14 Apr 2010 11:36:48 +0530
+
+nginx (0.7.65-4) unstable; urgency=low
+
+  [Kartik Mistry]
+  * debian/conf/sites-available/default:
+    + Really listen for both IPv4 and IPv6 addresses. Thanks to Nikolaus
+      Schulz <microschulz@web.de> for notice (Closes: #574983)
+  * debian/control, debian/rules:
+    + Added GeoIP support, Thanks to Caetano Carezzato
+      <caetano@vision.ime.usp.br> (Closes: #575280)
+  * debian/conf/mime.types:
+    + Added svg entry to mime.types, Jeremy Lal <kapouer@melix.org>
+      (Closes: #575155)
+
+ -- Kartik Mistry <kartik@debian.org>  Thu, 25 Mar 2010 00:21:50 +0530
+
+nginx (0.7.65-3) unstable; urgency=medium
+
+  [Kartik Mistry]
+  * Urgency set to medium due to Release Goal
+  * debian/conf/sites-available/default:
+    + Listen for both IPv4 and IPv6 addresses by default (Closes: #574983)
+
+ -- Kartik Mistry <kartik@debian.org>  Tue, 23 Mar 2010 10:30:18 +0530
+
+nginx (0.7.65-2) unstable; urgency=low
+
+  * debian/README.Debian:
+    + Added explanation about not installing files in /var/www/
+      (Closes: #572513)
+  * debian/rules:
+    + Readded realip module support (Closes: #507419)
+
+ -- Kartik Mistry <kartik@debian.org>  Sat, 06 Mar 2010 13:14:48 +0530
 
 nginx (0.7.65-1ubuntu2) lucid; urgency=low
 

@@ -63,7 +63,7 @@ ngx_init_cycle(ngx_cycle_t *old_cycle)
     tp = ngx_timeofday();
     tp->sec = 0;
 
-    ngx_time_update(0, 0);
+    ngx_time_update();
 
 
     log = old_cycle->log;
@@ -847,7 +847,7 @@ ngx_cmp_sockaddr(struct sockaddr *sa1, struct sockaddr *sa2)
         sin61 = (struct sockaddr_in6 *) sa1;
         sin62 = (struct sockaddr_in6 *) sa2;
 
-        if (sin61->sin6_port != sin61->sin6_port) {
+        if (sin61->sin6_port != sin62->sin6_port) {
             return NGX_DECLINED;
         }
 

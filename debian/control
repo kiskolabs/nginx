@@ -7,11 +7,12 @@ Uploaders: Fabio Tranchitella <kobold@debian.org>,
  Kartik Mistry <kartik@debian.org>
 Build-Depends: debhelper (>= 7),
                autotools-dev,
+               libgeoip-dev,
                libssl-dev,
                libpcre3-dev,
-               zlib1g-dev,
-               libmhash-dev
-Standards-Version: 3.8.4
+               libmhash-dev,
+               zlib1g-dev
+Standards-Version: 3.9.1
 Homepage: http://nginx.net
 Vcs-Svn: svn://svn.debian.org/svn/collab-maint/deb-maint/nginx/trunk
 Vcs-Browser: http://svn.debian.org/wsvn/collab-maint/deb-maint/nginx/trunk
